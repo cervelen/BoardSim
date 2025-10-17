@@ -1,0 +1,2 @@
+# BoardSim
+PCB Sim Repo Lowkey. Based on OpenEMS. IN CONSTRUCTION I AM NOT STEALING OPENEMS
