@@ -19,3 +19,5 @@ void Vorp::change_magnitude(double magnitude){
     this->magnitude = magnitude;
 }
 
+
+

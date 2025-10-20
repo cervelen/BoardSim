@@ -19,8 +19,10 @@ class Vorp{
 class E_Sim{
     public:
         std::vector<std::vector<std::vector<Vorp>>> grid;   //each vorp in the grid is separated by 1/2 cell from each other vorp.
+        
 
-}
+        E_Sim(std::vector<std::vector<std::vector<double>>> )
+};
 
 
 
