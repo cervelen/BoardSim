@@ -44,14 +44,18 @@ class Fuihua{
         //don't forget to have fun and be creative, make machines, advance humanity, and support your community.
         std::vector<std::vector<double>> simulation_object;
         std::string simulation_type;
+        std::vector<std::vector<std::vector<double>>> voxelized_grid;
+        std::vector<double> voxelized_grid_size; //format x, y, z.
+        std::vector<double> face_ids;
+        double voxel_scalar;
 
-        Fuihua(std::string simulation_type);
+        Fuihua(const std::string& simulation_type, double voxel_scalar);
 
         //if a generated material overlaps with another, it overwrites that material inherently.
         //The order of material generation will determine the object -> simulation conversion.
 
         //this function is for building with your own sim environment, and meant to be used the most.
-        void generate_material(double material_positive, double material_negative, std::vector<std::vector<double>> vertices);
+        void generate_material(double material_positive, double material_negative, std::vector<std::vector<double>>& faces);
 
         //these below are for QOL and tutorials
         void generate_box(double origin_x, double origin_y, double origin_z, double length, double width, double height); //x -> length, y -> width, z -> height

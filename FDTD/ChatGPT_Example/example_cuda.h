@@ -1,4 +1,4 @@
-// gpu_ops.h
+// example_cuda.h
 #pragma once
 
 // Returns true if any value in the input array is greater than threshold

@@ -1,5 +1,5 @@
 // gpu_ops.cu
-#include "gpu_ops.h"
+#include "example_cuda.h"
 #include "utils.h"
 #include <cuda_runtime.h>
 

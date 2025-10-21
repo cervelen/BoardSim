@@ -1,8 +1,8 @@
 // main.cpp
 #include <iostream>
 #include <vector>
-#include "gpu_ops.h"
-#include "utils.h"
+#include "example_cuda.h"
+#include "example_cpp.h"
 
 int main() {
     const int N = 10000;
