@@ -33,15 +33,13 @@ E_Sim::E_Sim(std::vector<std::vector<std::vector<std::vector<double>>>> input_gr
     }
     //construction above
     //validation below
-    for (int layer = 0; layer < input_grid.size(); layer++){
-        for (int row = 0; row < input_grid[layer].size(); row++){
-            for (int vorp = 0; vorp < input_grid[layer][row].size(); vorp++){
-                this->grid[layer][row].emplace_back(Vorp(input_grid[layer][row][vorp][0], input_grid[layer][row][vorp][1], input_grid[layer][row][vorp][2], 0));
-            }
-        }
-    }
-
-
+    //validation above
 }
 
+Fuihua::Fuihua(std::string simulation_type){
+    this->simulation_type = simulation_type;
+}
 
+void generate_material(double material_positive, double material_negative, std::vector<std::vector<double>> vertices){
+    
+}
