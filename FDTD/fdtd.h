@@ -1,19 +1,21 @@
-#ifndef FDTD_H
-#define FDTD_H
-
+#ifdef __CUDACC__
+#define HD __HOST__ __DEVICE__
+#else
+#define HD
+#endif
 #include <vector>
 
-
+void divide_vectors(double* numerator, double* denominator, double* result, int size);
 
 struct double3 {
     double x, y, z;
     
-    double3(double x, double y, double z);
+    HD double3(double x, double y, double z);
     
-    double3 operator+(const double3& v) const;
-    double3 operator-(const double3& v) const;
-    double3 operator*(double s) const;
-    double length() const;
+    HD double3 operator+(const double3& v) const;
+    HD double3 operator-(const double3& v) const;
+    HD double3 operator*(double s) const;
+    HD double length() const;
 };
 
 
@@ -46,9 +48,3 @@ class Fuihua{
         Fuihua();
 
 };
-
-
-
-
-
-#endif // FDTD_H

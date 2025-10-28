@@ -1,4 +1,4 @@
-#include "cuda_functions.h"
+#include "fdtd_cuda.h"
 #include <cuda_runtime.h>
 
 
