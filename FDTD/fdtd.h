@@ -1,5 +1,7 @@
 #ifdef __CUDACC__
-#define HD __HOST__ __DEVICE__
+#define HD __host__ __device__
+#define H __host__
+#define D __device__
 #else
 #define HD
 #endif
@@ -16,6 +18,14 @@ struct double3 {
     HD double3 operator-(const double3& v) const;
     HD double3 operator*(double s) const;
     HD double length() const;
+};
+
+struct sphere {
+    double3 origin; //sphere origin
+    double3 rtp; //roe, theta, phi
+    
+    D 
+
 };
 
 

@@ -3,7 +3,7 @@
 
 struct sphere{
     
-}
+};
 __global__ void divide_kernel(double* numerator, double* denominator, double* result, int size){ //each vector is the same size
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
 
@@ -32,7 +32,7 @@ void divide_vectors(double* numerator, double* denominator, double* result, int 
     int numBlocks = (size + threadsPerBlock - 1) / threadsPerBlock;
 
     //runs divide_kernel
-    divideKernel<<<numBlocks, threadsPerBlock>>>(d_numerator, d_denominator, d_result, size);
+    divide_kernel<<<numBlocks, threadsPerBlock>>>(d_numerator, d_denominator, d_result, size);
 
     //copies memory back to host
     cudaMemcpy(result, d_result, size * sizeof(double), cudaMemcpyDeviceToHost);
