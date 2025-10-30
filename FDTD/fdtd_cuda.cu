@@ -1,7 +1,9 @@
-#include "fdtd_cuda.h"
+#include "fdtd.h"
 #include <cuda_runtime.h>
 
-
+struct sphere{
+    
+}
 __global__ void divide_kernel(double* numerator, double* denominator, double* result, int size){ //each vector is the same size
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
 

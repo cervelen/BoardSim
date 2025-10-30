@@ -1,5 +1,4 @@
 #include "fdtd.h"
-#include "fdtd_cuda.h"
 #include <vector>
 #include <iostream>
 #include <fstream>
