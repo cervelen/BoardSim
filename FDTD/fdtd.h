@@ -4,6 +4,7 @@
 #define D __device__
 #else
 #define HD
+#define D
 #endif
 #include <vector>
 
@@ -12,20 +13,19 @@ void divide_vectors(double* numerator, double* denominator, double* result, int 
 struct double3 {
     double x, y, z;
     
-    HD double3(double x, double y, double z);
+    D double3(double x, double y, double z);
     
-    HD double3 operator+(const double3& v) const;
-    HD double3 operator-(const double3& v) const;
-    HD double3 operator*(double s) const;
-    HD double length() const;
+    D double3 operator+(const double3& v) const;
+    D double3 operator-(const double3& v) const;
+    D double3 operator*(double s) const;
+    D double length() const;
 };
 
 struct sphere {
     double3 origin; //sphere origin
     double3 rtp; //roe, theta, phi
     
-    D 
-
+    HD bool in_box(double3);
 };
 
 
