@@ -1,4 +1,6 @@
 #include "fdtd_experiment.h"
+#inclue <variant>
+#include <vector>
 //#include <cuda_runtime.h>
 
 
@@ -37,4 +39,25 @@ void launch_check_in_sphere(sphere my_sphere, double3* points, int n){
     int gridSize = (n + blockSize - 1) / blockSize;
     check_in_sphere<<<gridSize, blockSize>>>(my_sphere, points, n);
     cudaDeviceSynchronize();
+}
+
+H bool fuihua::place_box(double3 origin, double3 lwh, double3 dirvector){
+    elements.emplace_back(box(origin, lwh, dirvector));
+    return true;
+}
+
+H bool fuihua::place_sphere(double3 origin, double3 rtp, double3 dirvector){
+    elements.emplace_back(sphere(origin, rtp, dirvector));
+    return true;
+}
+
+H bool fuihua::generate_yee_sim_environment(){
+    if (!elements.empty()){
+        if (std::holds_alternative<Sphere>(elements[0])) {
+            
+        } else if (std::holds_alternative<Box>(elements[0])) {
+            
+        }
+    }
+
 }

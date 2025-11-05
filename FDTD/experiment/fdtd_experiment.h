@@ -61,13 +61,13 @@ struct vorp{
 
 struct fuihua{
     std::vector<std::variant<sphere, box>> elements;    //first element is the sim box
-    std::vector<vorp> fdtd_field;                       //vorps are put in vector irrespective of position
+    std::vector<vorp> yee_fdtd_field;                       //vorps are put in vector irrespective of position
 
     H fuihua() : {}
-    H place_box(double3 origin, double3 lwh, double3 dirvector);
-    H place_sphere(double3 origin, double3 rtp, double3 dirvector);
+    H bool place_box(double3 origin, double3 lwh, double3 dirvector);
+    H bool place_sphere(double3 origin, double3 rtp, double3 dirvector);
 
-    H 
+    H bool generate_yee_sim_environment_(double stencil_size);
 };
 
 
