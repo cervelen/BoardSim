@@ -51,12 +51,18 @@ H bool fuihua::place_sphere(double3 origin, double3 rtp, double3 dirvector){
     return true;
 }
 
-H bool fuihua::generate_yee_sim_environment(){
+H bool fuihua::generate_yee_sim_environment(double stencil_size){
     if (!elements.empty()){
-        if (std::holds_alternative<Sphere>(elements[0])) {
+        if (std::holds_alternative<sphere>(elements[0])) {
             
-        } else if (std::holds_alternative<Box>(elements[0])) {
-            
+        } else if (std::holds_alternative<box>(elements[0])) {
+            for (int i = 0; i < static_cast<int>(elements[0].lwh.x); i++){          //*UNDER CONSTRUCTION*
+                for (int j = 0; j < static_cast<int>(elements[0].lwh.y); j++){      //obviously stencil size is not factored in here <-^-∨
+                    for (int k = 0; k < static_cast<int>(elements[0].lwh.z); k++){  //*UNDER CONSTRUCTION*
+                        yee_fdtd_field.emplace_back(vorp(double3(double(stencil_size), double(stencil_size), double(stencil_size)), double3(double(), double(), double()), int()));
+                    }
+                }
+            }
         }
     }
 
