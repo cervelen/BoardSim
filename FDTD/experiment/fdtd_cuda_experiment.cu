@@ -1,6 +1,4 @@
 #include "fdtd_experiment.h"
-#inclue <variant>
-#include <vector>
 //#include <cuda_runtime.h>
 
 
