@@ -51,6 +51,7 @@ void launch_check_in_box(box my_box, double3* points, int n);
 struct vorp{
     double3 location;
     double3 dirvector;
+    vorp* 
     int h_e;            //h -> magnetic field, e -> electric field
     int material = 0;   //each material associated with a materialid, allowing the characteristics to be known for simulation (0 is free space)
 
@@ -61,7 +62,8 @@ struct vorp{
 
 struct fuihua{
     std::vector<std::variant<sphere, box>> elements;    //first element is the sim box
-    std::vector<vorp> yee_fdtd_field;                       //vorps are put in vector irrespective of position
+    std::vector<vorp> yee_e_field;                       //vorps are put in vector irrespective of position
+    std::vector<vorp> yee_h_field;                       //vorps are put in vector irrespective of position
 
     H fuihua() : {}
     H bool place_box(double3 origin, double3 lwh, double3 dirvector);
